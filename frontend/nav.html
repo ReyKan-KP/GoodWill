@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NavBar</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@1,700&family=Merriweather:wght@700&family=Quicksand:wght@600&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .paddingR_custom {
+    padding-right: 2.5rem;
+  }
+
+  .paddingL_custom {
+    padding-left: 5rem;
+  }
+
+  .flex_custom {
+    display: flex;
+  }
+
+  .alignSelf_custom {
+    align-self: center;
+  }
+
+  #menuBar {
+    display: none;
+  }
+
+  .logo {
+    background-image: url(https://iili.io/HXsiYfR.png);
+    width: 4rem;
+    height: 4rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .logoAtVertNav {
+    background-image: url(https://iili.io/HXsiYfR.png);
+    width: 10rem;
+    height: 10rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 7rem;
+  }
+
+  .font_custom {
+    font-weight: bold;
+    font-family: "Merriweather", serif;
+    font-size: larger;
+  }
+
+
+  .customTextColor {
+    color: #b9b2ae;
+  }
+
+  .donateBtn {
+    font-size: .8rem;
+    line-height: .125rem;
+    color: #ffffff;
+    background: #ff6d12;
+    padding: .8rem .8rem;
+    margin-top: 1.2rem;
+    cursor: pointer;
+    border-radius: 10rem;
+    transition: background-color 0.7s ease, box-shadow 0.3s ease;
+  }
+
+  .donateBtn:hover {
+    background-color: rgb(248, 173, 12);
+    color: rgb(248, 203, 79);
+    box-shadow: 0px 4px 6px rgba(255, 187, 0, 0.685);
+  }
+
+  .nav-link {
+    transition: color .7s ease;
+    transition: transform 0.7s ease;
+  }
+
+  .nav-link:hover {
+    color: #ff6d12;
+    transform: scale(1.18);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .navbar.fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .navbar.slide-in {
+    animation: slideIn 1s ease-out;
+  }
+
+  @keyframes fadeInMenu {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .dropdown-menu.fade-in-menu {
+    animation: fadeInMenu 0.5s ease;
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+
+      <a class="navbar-brand customTextColor flex_custom" href="#">
+        <div class="logo"></div>
+        <div class="alignSelf_custom">
+          <h2><span class="displayNone customTextColor">GOODWILL</span></h2>
+        </div>
+      </a>
+      <div id="lists">
+        <ul class="navbar-nav flex-row justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link customTextColor paddingR_custom paddingL_custom font_custom " aria-current="page" href="#"><i class='fa fa-home' style="padding-left: 1rem;"></i><span class="displayNone">Home</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link customTextColor paddingR_custom font_custom dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false"><i class='fas fa-hands-helping' style="padding-left: 2rem;"></i><span class="displayNone">Services</span></a>
+            <ul class="dropdown-menu bg-dark customTextColor" aria-labelledby="navbarDropdown" style="position: absolute; z-index: 1; ">
+              <li><a class="nav-link dropdown-item customTextColor font_custom" href="#" style="font-size: medium; padding-left:1rem"><i class="fa fa-calendar" aria-hidden="true"></i>
+                  Events</a></li>
+              <li><a class="nav-link dropdown-item customTextColor font_custom" style="font-size: medium; padding-left:1rem" href="#"><i class="fa-solid fa-circle-dollar-to-slot"></i> Donation</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link customTextColor paddingR_custom font_custom" href="#"><i class='fa fa-users' style="padding-left: .5rem;"></i><span class="displayNone">NGO</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link customTextColor paddingR_custom font_custom" href="#"><i class='fa fa-envelope' style="padding-left: 1.5rem;"></i><span class="displayNone">Contact</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn customTextColor paddingR_custom font_custom cursor-pointer" href="#">
+              <i class="fa fa-sign-in "></i><span class="displayNone">&nbsp;Log In</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn customTextColor paddingR_custom font_custom cursor-pointer " href="#">
+              <i class='fa fa-user-plus'></i>
+              <span class="displayNone">&nbsp; Sign Up</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="donateBtn nav-link btn customTextColor paddingR_custom font_custom cursor-pointer" id="donateBtn"><i class="fa-solid fa-heart" style="color: red;"></i>&nbsp;Donate</a>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <div id="menuBar"><button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+          <i class="fa-solid fa-bars"></i>
+        </button></div>
+      <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="padding-right:46em ;"></button>
+        <div class="offcanvas-header">
+          <a class="navbar-brand customTextColor" href="#">
+            <div class="logoAtVertNav"></div>
+            <div class="alignSelf_custom p-5">
+              <h2 style="padding-left: 3.5rem;" class="customTextColor">GOODWILL</h2>
+            </div>
+          </a>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link customTextColor font_custom p-4" aria-current="page" href="#">
+                <center><i class='fa fa-home'></i>&nbsp;Home</span></center>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link customTextColor font_custom p-4" href="#">
+                <center><i class='fas fa-hands-helping'></i>&nbsp;Services</center>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link customTextColor font_custom p-4" href="#">
+                <center><i class='fa fa-users'></i>&nbsp;NGO</center>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link customTextColor font_custom p-4" href="#">
+                <center><i class='fa fa-envelope'></i>&nbsp;Contact</center>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn customTextColor paddingR_custom font_custom cursor-pointer p-4" href="#">
+                <i class="fa fa-sign-in"></i>&nbsp;Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn customTextColor paddingR_custom font_custom cursor-pointer p-4" href="#">
+                <i class='fa fa-user-plus'></i>
+                &nbsp;Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="donateBtn nav-link btn customTextColor paddingR_custom font_custom cursor-pointer p-4 "><i class="fa-solid fa-heart" style="color: red;"></i>&nbsp;Donate</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</body>
+
+<script>
+  function displayMenuBar(x) {
+    if (x.matches) {
+      document.getElementById("menuBar").style.display = "block";
+      document.getElementById("lists").style.display = "none";
+    } else {
+      document.getElementById("menuBar").style.display = "none";
+      document.getElementById("lists").style.display = "block";
+    }
+  }
+
+  function displayText(y) {
+    var elements = document.getElementsByClassName("displayNone");
+    if (y.matches) {
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+      }
+      document.getElementById("donateBtn").style.marginTop = ".1rem"
+    } else {
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "block";
+        document.getElementById("donateBtn").style.marginTop = "1.3rem"
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var navbar = document.querySelector('.navbar');
+    navbar.classList.add('fade-in');
+  });
+
+
+  var x = window.matchMedia("(max-width: 68.438rem)");
+  var y = window.matchMedia("(max-width: 88.438rem)");
+
+  displayText(y);
+  displayMenuBar(x);
+  y.addListener(displayText);
+  x.addListener(displayMenuBar);
+</script>
+
+
+</html>

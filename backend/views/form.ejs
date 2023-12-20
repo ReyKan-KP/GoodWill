@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+       const uploadimage=(file)=>{
+    console.log("hi");
+console.log(file);
+       
+
+
+       }
+
+    </script>
+
+    <form action="/NGOdata" method="post">
+        <input type="text" name="title" id="">
+        <input type="text" name="description" id="" onclick="
+            uploadimage(event)
+        ">
+        <input type="text" name="tag" id="">
+        <input type="file" id="myfile" name="photo" onchange="
+            uploadimage(event.target.files)
+        ">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
